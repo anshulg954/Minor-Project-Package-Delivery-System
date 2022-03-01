@@ -1,0 +1,15 @@
+Important Components:
+    1. User
+        -> Can Signup
+        -> Can Verify using OTP @Twilio
+        -> Can Login
+        -> Can View User Details
+        -> Can Change User Details
+    2. Order
+        -> User (if Logged In) can Place Order
+            -> Before placing order and generating tracking id 
+                -> Generate Cost Estimate and Show to the User
+        -> User can check the placed orders and Tracking Details at one page
+    3. Customer Feedback
+        -> Redirect just after delivery status is complete
+        aka
