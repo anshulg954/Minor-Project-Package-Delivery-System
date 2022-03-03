@@ -1,0 +1,40 @@
+<form [formGroup]="feedbackForm" (ngSubmit)="onSubmitFeedback()" novalidate>
+    <h1>Enter Feedback Details</h1>
+    <mat-form-field>
+        <mat-label>
+            Corresponding Order ID 
+        </mat-label>
+        <input matInput formControlName="orderID" placeholder="Ex. l09j11pwc8ha3wzgvoa" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+           Your Name
+        </mat-label>
+        <input matInput formControlName="name" placeholder="Ex. Anshul" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Your Registered Email
+        </mat-label>
+        <input matInput formControlName="email" type="email" placeholder="Ex. abcd@xyz.com" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Subject
+        </mat-label>
+        <input matInput formControlName="subject" placeholder="Ex. Reg. Delivery" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Message
+        </mat-label>
+        <textarea matInput formControlName="message" placeholder="Ex. I am very happy with your service. I will definitely use your services again." required></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!feedbackForm.valid">Submit Feedback</button>
+</form>
+<br>
+<button mat-raised-button color="primary" type="submit" class="outer">        
+    <a
+    routerLinkActive="active-link"
+    routerLink="/show-customer-feedbacks"
+  >Retrieve Past Feedbacks</a></button>

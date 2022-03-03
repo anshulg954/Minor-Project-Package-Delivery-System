@@ -1,0 +1,16 @@
+<form [formGroup]="contactVerification" (ngSubmit)="onVerify()" novalidate>
+    <h1>User Verification</h1>
+    <mat-form-field>
+        <mat-label>
+            Re-Enter Contact:
+        </mat-label>
+        <input matInput formControlName="contact" type="contact" placeholder="Ex. +918146548281" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Enter One Time Password:
+        </mat-label>
+        <input matInput formControlName="otp" placeholder="Ex. 123456" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!contactVerification.valid">Verify</button> 
+</form>

@@ -1,0 +1,25 @@
+<h1>Showing Order Details</h1>
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr mdbTableCol *ngFor="let order of orderAll">
+      <th scope="row">{{order.orderID}}</th>
+      <td >{{order.type}}</td>
+      <td> {{ order.weight }} </td>
+      <td> {{ order.length }} </td>
+      <td> {{ order.breadth }} </td>
+      <td> {{ order.pAddress }} </td>
+      <td> {{ order.dAddress }} </td>
+      <td> {{ order.altContact }} </td>
+     <td>  Rs. {{ order.estdCost }} </td>
+     <td> {{ order.couponCode }} </td>
+     <td> {{ order.deliveryStatus }} </td>
+     <td> {{ order.paymentStatus }} </td>
+     <td> {{ order.trackingID }} </td>
+    </tr>
+  </tbody>
+</table>

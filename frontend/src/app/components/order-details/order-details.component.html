@@ -1,0 +1,64 @@
+<form [formGroup]="orderDetailsForm" (ngSubmit)="onMakeOrder()" novalidate>
+    <h1>Enter Order Details</h1>
+    <mat-form-field>
+        <mat-label>
+            Type
+        </mat-label>
+        <select matNativeControl formControlName="type" required>
+            <option value="">Select</option>
+            <option value="1">Regular</option>
+            <option value="2">Medium</option>
+            <option value="3">Heavy</option>
+        </select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Weight (in Kg)
+        </mat-label>
+        <input matInput formControlName="weight" placeholder="Ex. 10" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Length (in Meters)
+        </mat-label>
+        <input matInput formControlName="length" placeholder="Ex. 20" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Breadth (in Meters)
+        </mat-label>
+        <input matInput formControlName="breadth" placeholder="Ex. 30" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Picture (URL)
+        </mat-label>
+        <input matInput formControlName="picture" placeholder="Ex. https://drive.google.com/file/d/1RtON82p588eZuIKBGZdRgOuUReSUeLVH/edit" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Pickup Address
+        </mat-label>
+        <input matInput formControlName="pAddress" placeholder="Ex. 242-A, Sector 51-A, Chandigarh, India" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Delivery Address
+        </mat-label>
+        <input matInput formControlName="dAddress" placeholder="Ex. 243-A, Sector 51-A, Chandigarh, India" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Alternate Contact Number
+        </mat-label>
+        <input matInput formControlName="altContact" placeholder="Ex. +918146548281" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            Coupon Code
+        </mat-label>
+        <input matInput formControlName="couponCode" placeholder="Ex. Enter MAXFIFTY to save 50 Rupees on Total Cost">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!orderDetailsForm.valid">Get Estimated Cost</button>
+</form>
+<br>

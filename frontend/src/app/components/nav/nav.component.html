@@ -1,0 +1,137 @@
+<mat-toolbar class="mat-elevation" color="primary" fxLayout="row">
+  <img
+    [routerLink]="['/']"
+    src="../../../assets/images/Jungleworks-Full-Logo.svg"
+    alt="logo"
+  />
+  <div style="width: 30%; height: 30%">
+    <a class="valign-center" mat-icon-button> </a>
+  </div>
+  <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.xs>
+    <ul fxLayout fxLayoutGap="20px" class="menu-items">
+      <li>
+        <a
+          routerLinkActive="active-link"
+          routerLink="/login"
+          *ngIf="!loginStatus"
+        >
+          <span>Login</span>
+        </a>
+      </li>
+      <li>
+        <a
+          routerLinkActive="active-link"
+          routerLink="/signup"
+          *ngIf="!loginStatus"
+        >
+          <span>Signup</span>
+        </a>
+      </li>
+      <li *ngIf="loginStatus">
+        Welcome,
+        <a
+          *ngIf="{userName}"
+          routerLinkActive="active-link"
+          routerLink="/show-user-details"
+        >
+          <span> {{ userName }} </span>
+        </a>
+      </li>
+      <li>
+        <a
+          routerLinkActive="active-link"
+          routerLink="/order-details"
+          *ngIf="loginStatus"
+        >
+          <span>Place Order</span>
+        </a>
+      </li>
+      <li>
+        <a
+          routerLinkActive="active-link"
+          routerLink="/get-order-details"
+          *ngIf="loginStatus"
+        >
+          <span>Fetch Orders</span>
+        </a>
+      </li>
+      <li>
+        <a
+          routerLinkActive="active-link"
+          routerLink="/feedback"
+          *ngIf="loginStatus"
+        >
+          <span>Feedbacks</span>
+        </a>
+      </li>
+      <!-- <li>
+        <a
+          routerLinkActive="active-link"
+          routerLink="/get-order-details"
+          *ngIf="loginStatus"
+        >
+          <span>Retrieve Feeds</span>
+        </a>
+      </li>-->
+      <li> 
+        <a
+          routerLinkActive="active-link"
+          (click)="onLogOut()"
+          routerLink="/login"
+          *ngIf="loginStatus"
+        >
+          <span>Logout</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.gt-xs>
+    <a
+      class="valign-center"
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="additional links"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </a>
+    <mat-menu #menu="matMenu">
+      <ul class="menu-items">
+        <li>
+          <a
+            routerLinkActive="active-link"
+            routerLink="/login"
+            *ngIf="!loginStatus"
+          >
+            <span>Login</span>
+          </a>
+        </li>
+        <li>
+          <a
+            routerLinkActive="active-link"
+            routerLink="/signup"
+            *ngIf="!loginStatus"
+          >
+            <span>Signup</span>
+          </a>
+        </li>
+        <li *ngIf="!loginStatus">
+          <a *ngIf="{userName}">
+            <span>
+              {{ userName }}
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            routerLinkActive="active-link"
+            (click)="onLogOut()"
+            routerLink="/login"
+            *ngIf="loginStatus"
+          >
+            <span>Logout</span>
+          </a>
+        </li>
+      </ul>
+    </mat-menu>
+  </div>
+</mat-toolbar>

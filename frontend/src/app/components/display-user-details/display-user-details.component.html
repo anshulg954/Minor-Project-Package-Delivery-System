@@ -1,0 +1,28 @@
+<h1>Showing User Details</h1>
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr mdbTableCol *ngFor="let user of info">
+      <th scope="row">{{user.id}}</th>
+      <td >{{user.name}}</td>
+      <td> {{ user.email }} </td>
+      <td> {{ user.contact }} </td>
+      <td> {{ user.country }} </td>
+      <td> {{ user.state }} </td>
+      <td> {{ user.city }} </td>
+      <td> {{ user.zip }} </td>
+     <td>  {{ user.address }} </td>
+    </tr>
+  </tbody>
+</table>
+<button>
+<a
+routerLinkActive="active-link"
+routerLink="/user-details">
+<span>Change User Details</span>
+</a>
+</button>

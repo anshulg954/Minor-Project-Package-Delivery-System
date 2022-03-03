@@ -1,0 +1,24 @@
+<h1>Showing Your Submitted Feedbacks</h1>
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr mdbTableCol *ngFor="let feedback of feedbacks">
+      <th scope="row">{{feedback.orderID}}</th>
+      <td >{{feedback.name}}</td>
+      <td> {{ feedback.email }} </td>
+      <td> {{ feedback.subject }} </td>
+      <td> {{ feedback.message }} </td>
+    </tr>
+  </tbody>
+</table>
+<button>
+<a
+routerLinkActive="active-link"
+routerLink="/feedback">
+<span>Submit New Feedback</span>
+</a>
+</button>
