@@ -4,7 +4,7 @@ Important Components:
         -> Can Verify using OTP @Twilio
         -> Can Login
         -> Can View User Details
-        -> Can Change User Details
+        -> Can Add User Details
     2. Order
         -> User (if Logged In) can Place Order
             -> Before placing order and generating tracking id 
